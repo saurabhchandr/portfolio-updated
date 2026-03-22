@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saurabh Chandra | UI/UX Designer</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.min.js"></script>
+
+  <style>
+    body { font-family: 'Inter', sans-serif; background: linear-gradient(120deg, #eef2ff, #f8fafc); color: #111; overflow-x: hidden; }
+    .bg-shape { position: absolute; border-radius: 50%; filter: blur(100px); opacity: 0.4; z-index: -1; }
+    .shape1 { width: 300px; height: 300px; background: #6366f1; top: -100px; left: -100px; }
+    .shape2 { width: 400px; height: 400px; background: #a855f7; bottom: -150px; right: -150px; }
+
+    .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+
+    .hero-card { background: white; border-radius: 24px; padding: 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+    .profile { width: 220px; height: 220px; border-radius: 9999px; object-fit: cover; border: 6px solid white; box-shadow: 0 15px 35px rgba(0,0,0,0.12); animation: float 3s ease-in-out infinite; }
+    @keyframes float { 0%,100% {transform:translateY(0)} 50%{transform:translateY(-15px)} }
+
+    .project-card { background: white; border-radius: 24px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: all 0.5s; }
+    .project-card:hover { transform: translateY(-15px) scale(1.04); box-shadow: 0 30px 60px rgba(99,102,241,0.3); }
+    .project-img { height: 220px; background-size: cover; background-position: center; transition: 0.6s; }
+    .project-card:hover .project-img { transform: scale(1.12); }
+    .overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.75), transparent); opacity: 0; transition: 0.4s; display: flex; align-items: flex-end; padding: 20px; }
+    .project-card:hover .overlay { opacity: 1; }
+
+    .edu-card { background: white; border-radius: 20px; padding: 24px; box-shadow: 0 10px 25px rgba(0,0,0,0.06); transition: all 0.4s; }
+    .edu-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(99,102,241,0.25); }
+
+    /* Beautiful Interactive Certificates */
+    .cert-card {
+      background: white;
+      border-radius: 20px;
+      padding: 24px 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    .cert-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 25px 50px rgba(99,102,241,0.25);
+    }
+    .cert-card:hover .icon { transform: rotate(15deg) scale(1.25); }
+    .cert-card .icon { font-size: 3rem; transition: 0.4s; }
+    .cert-card button { opacity: 0; transition: 0.3s; }
+    .cert-card:hover button { opacity: 1; }
+  </style>
+</head>
+
+<body>
+
+<div class="bg-shape shape1"></div>
+<div class="bg-shape shape2"></div>
+
+<!-- HERO -->
+<section class="max-w-6xl mx-auto py-20 px-6">
+  <div class="hero-card grid md:grid-cols-2 gap-12 items-center">
+    <div class="reveal space-y-6">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
+        Hi, I'm Saurabh Chandra,<br>
+        <span id="typed-role" class="gradient-text"></span>
+      </h1>
+      <p class="text-xl text-gray-700 font-medium">Crafting intuitive and joyful digital experiences</p>
+      <p class="text-gray-600">I design meaningful products through UX research, thoughtful problem-solving, and clean, modern interfaces.</p>
+
+      <div class="flex flex-wrap gap-4">
+        <a href="#work" class="btn px-8 py-3">View My Projects</a>
+        <a href="mailto:saurabhchandra7393@gmail.com" class="btn-secondary px-8 py-3">Let’s Talk →</a>
+        <a href="resume.pdf" download class="btn bg-cyan-400 text-black px-8 py-3">📥 Download Resume</a>
+      </div>
+
+      <div class="flex flex-wrap gap-6 text-lg font-medium">
+        <a href="https://www.linkedin.com/in/saurabh7393" target="_blank" class="flex items-center gap-2 text-[#0A66C2]"><i class="fab fa-linkedin fa-2x"></i> LinkedIn</a>
+        <a href="https://github.com/saurabhchandr" target="_blank" class="flex items-center gap-2 text-black"><i class="fab fa-github fa-2x"></i> GitHub</a>
+        <a href="https://behance.net/saurabhchandra23" target="_blank" class="flex items-center gap-2 text-[#1769FF]"><i class="fab fa-behance fa-2x"></i> Behance</a>
+      </div>
+    </div>
+    <div class="flex justify-center reveal">
+      <img src="profile.jpg" class="profile">
+    </div>
+  </div>
+</section>
+
+<!-- SELECTED WORK -->
+<section id="work" class="max-w-6xl mx-auto px-6 py-20">
+  <h2 class="text-3xl font-bold mb-8">Featured Projects</h2>
+  <div class="grid md:grid-cols-3 gap-8">
+    <a href="https://www.figma.com/proto/ZtkS0FFJjxwUTWslB1tOk2/Uni-Trade" target="_blank" class="project-card group">
+      <div class="project-img" style="background-image: url('https://picsum.photos/id/60/800/500')"></div>
+      <div class="overlay"><button class="bg-white text-black px-6 py-2.5 rounded-full font-semibold flex items-center gap-2">👁️ Open Prototype</button></div>
+      <div class="p-6"><h3 class="font-bold text-xl">Uni Trade • Student Marketplace</h3><p class="text-sm text-gray-600 mt-1">Dec 2025 • Peer-to-Peer • Sustainable Reuse</p></div>
+    </a>
+    <a href="https://www.figma.com/proto/BxGtAB8AmmYF8Y8N2Or7Z2/Soul-Nest" target="_blank" class="project-card group">
+      <div class="project-img" style="background-image: url('https://picsum.photos/id/1015/800/500')"></div>
+      <div class="overlay"><button class="bg-white text-black px-6 py-2.5 rounded-full font-semibold flex items-center gap-2">👁️ Open Prototype</button></div>
+      <div class="p-6"><h3 class="font-bold text-xl">SoulNest • Mental Wellness App</h3><p class="text-sm text-gray-600 mt-1">2025 • Meditation • Community • Calm Experience</p></div>
+    </a>
+    <a href="https://www.figma.com/proto/RGTDTRlwkRGZPFAV8MwR6q/CarbonCounter" target="_blank" class="project-card group">
+      <div class="project-img" style="background-image: url('https://picsum.photos/id/133/800/500')"></div>
+      <div class="overlay"><button class="bg-white text-black px-6 py-2.5 rounded-full font-semibold flex items-center gap-2">👁️ Open Prototype</button></div>
+      <div class="p-6"><h3 class="font-bold text-xl">Carbon Counter • Emission Tracker</h3><p class="text-sm text-gray-600 mt-1">May 2025 • Daily Carbon • Eco Dashboard</p></div>
+    </a>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="max-w-6xl mx-auto px-6 py-16 bg-gradient-to-br from-white to-indigo-50">
+  <h2 class="text-3xl font-bold mb-10 flex items-center gap-3">🎓 Education</h2>
+  <div class="grid md:grid-cols-3 gap-6">
+    <div class="edu-card">
+      <div class="flex justify-between"><div><h3 class="font-bold text-lg text-indigo-700">B.Tech • Computer Science & Engineering</h3><p class="text-gray-700">Lovely Professional University, Phagwara</p></div><span class="text-4xl">🏛️</span></div>
+      <p class="mt-4 text-sm text-gray-600">Aug 2023 – Present • CGPA: 6.79</p>
+    </div>
+    <div class="edu-card">
+      <div class="flex justify-between"><div><h3 class="font-bold text-lg">Intermediate (Class 12th)</h3><p class="text-gray-700">New R.S.J Public School, Prayagraj</p></div><span class="text-4xl">📖</span></div>
+      <p class="mt-4 text-sm text-gray-600">Apr 2021 – Mar 2022 • 72%</p>
+    </div>
+    <div class="edu-card">
+      <div class="flex justify-between"><div><h3 class="font-bold text-lg">Matriculation (Class 10th)</h3><p class="text-gray-700">New R.S.J Public School, Prayagraj</p></div><span class="text-4xl">📚</span></div>
+      <p class="mt-4 text-sm text-gray-600">Apr 2019 – Mar 2020 • 85%</p>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATES - Beautiful & Interactive -->
+<section class="max-w-6xl mx-auto px-6 py-16">
+  <h2 class="text-3xl font-bold mb-10">Certificates</h2>
+  <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+    <a href="https://drive.google.com/file/d/1o81blITAARUwmNfi6t8Us1r1qrLEHO-N/view" target="_blank" class="cert-card group">
+      <div class="icon text-orange-500">📜</div>
+      <h3 class="font-semibold mt-3">Responsive Web Design Certificate</h3>
+      <p class="text-sm text-gray-600">freeCodeCamp • Oct 2023</p>
+      <button class="mt-4 text-xs bg-orange-500 hover:bg-orange-600 text-white px-5 py-2 rounded-full">View Certificate →</button>
+    </a>
+
+    <a href="https://drive.google.com/file/d/1SU8nvrW_0p4uJq59-6uw1QRjTvOjCEZe/view" target="_blank" class="cert-card group">
+      <div class="icon text-purple-500">📜</div>
+      <h3 class="font-semibold mt-3">Think Design and Prototype Certificate</h3>
+      <p class="text-sm text-gray-600">LPU • Jul 2025</p>
+      <button class="mt-4 text-xs bg-purple-500 hover:bg-purple-600 text-white px-5 py-2 rounded-full">View Certificate →</button>
+    </a>
+
+    <a href="https://drive.google.com/file/d/1SU8nvrW_0p4uJq59-6uw1QRjTvOjCEZe/view" target="_blank" class="cert-card group">
+      <div class="icon text-emerald-500">📜</div>
+      <h3 class="font-semibold mt-3">Bits & Bytes of Computer Networking</h3>
+      <p class="text-sm text-gray-600">Google • Sep 2024</p>
+      <button class="mt-4 text-xs bg-emerald-500 hover:bg-emerald-600 text-white px-5 py-2 rounded-full">View Certificate →</button>
+    </a>
+
+    <a href="https://drive.google.com/file/d/1peTVEbeHfsN9MHY8lbwbu34QBpz-yZE8/view" target="_blank" class="cert-card group">
+      <div class="icon text-blue-500">📜</div>
+      <h3 class="font-semibold mt-3">IBM User Experience Certificate</h3>
+      <p class="text-sm text-gray-600">IBM • Jan 2026</p>
+      <button class="mt-4 text-xs bg-blue-500 hover:bg-blue-600 text-white px-5 py-2 rounded-full">View Certificate →</button>
+    </a>
+
+  </div>
+</section>
+
+<!-- ACHIEVEMENT -->
+<section class="max-w-6xl mx-auto px-6 py-12">
+  <div class="bg-gradient-to-br from-amber-50 to-yellow-100 border border-amber-300 rounded-3xl p-8 text-center">
+    <h2 class="text-3xl font-bold flex justify-center items-center gap-3">🏆 Achievement <span class="text-4xl">🎉</span></h2>
+    <p class="text-2xl font-bold mt-3">1st Position in JioGames Master Challenge</p>
+    <p class="text-gray-600">January 2026 • College Hackathon</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="py-16 px-6 bg-black text-white text-center">
+  <h2 class="text-3xl font-bold mb-4">Let’s work together</h2>
+  <p class="mb-6">saurabhchandra7393@gmail.com</p>
+  <div class="flex justify-center gap-8 text-lg">
+    <a href="https://www.linkedin.com/in/saurabh7393" target="_blank" class="flex items-center gap-2"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    <a href="https://github.com/saurabhchandr" target="_blank" class="flex items-center gap-2"><i class="fab fa-github"></i> GitHub</a>
+    <a href="https://behance.net/saurabhchandra23" target="_blank" class="flex items-center gap-2"><i class="fab fa-behance"></i> Behance</a>
+  </div>
+</section>
+
+<script>
+  new Typed('#typed-role', { strings: ['UI/UX Designer'], typeSpeed: 70, showCursor: true, cursorChar: '✦' });
+  const obs = new IntersectionObserver(e => e.forEach(en => en.isIntersecting && en.target.classList.add("active")), {threshold: 0.15});
+  document.querySelectorAll("section, .reveal").forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>
